@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="en.desktop.calendar.controllers.MainController">
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <MenuBar>
+           <menus>
+             <Menu mnemonicParsing="false" text="File">
+               <items>
+                 <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Close" />
+               </items>
+             </Menu>
+             <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                 <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+             </Menu>
+             <Menu mnemonicParsing="false" text="Tools">
+               <items>
+                 <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+             </Menu>
+               <Menu mnemonicParsing="false" text="View">
+                 <items>
+                   <MenuItem mnemonicParsing="false" text="Action 1" />
+                     <MenuItem mnemonicParsing="false" text="%test" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="Modena">
+                        <toggleGroup>
+                           <ToggleGroup fx:id="theme" />
+                        </toggleGroup></RadioMenuItem>
+                     <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="Caspian" toggleGroup="$theme" />
+                 </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="About">
+                 <items>
+                   <MenuItem mnemonicParsing="false" text="Help" />
+                 </items>
+               </Menu>
+           </menus>
+         </MenuBar>
+            <fx:include fx:id="topMenuButtons" source="TopMenuButtons.fxml" />
+        </VBox>
+    </center>
+</BorderPane>
