@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.io.InputStream;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -29,11 +31,11 @@ public class Main extends Application {
         Locale.setDefault(new Locale("en")); // set default language for bundles (english), other and for now the second working language is "pl"
         ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
 
+
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(FXML_BORDER_PANE_MAIN)); // create FXMLLoader, get fxml file from folder resources
         loader.setResources(bundle);
         BorderPane borderPane = loader.load();
         Scene scene = new Scene(borderPane);
-
 
 
         primaryStage.setScene(scene);
